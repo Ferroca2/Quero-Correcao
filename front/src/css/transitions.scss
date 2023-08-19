@@ -1,0 +1,76 @@
+.fade {
+    &-enter-active,
+    &-leave-active {
+        transition: opacity var(--transition-duration, .5s) ease !important;
+        transition-delay: var(--transition-delay, 0) !important;
+    }
+
+    &-enter-from,
+    &-leave-to {
+        opacity: 0 !important;
+    }
+
+    &-leave-active {
+        position: absolute !important;
+        max-height: 100vh !important;
+        max-width: 100vw !important;
+        overflow: hidden !important;
+    }
+}
+
+$directions: (
+    left: (from: translateX(100%), to: translateX(-100%)),
+    right: (from: translateX(-100%), to: translateX(100%)),
+    up: (from: translateY(100%), to: translateY(-100%)),
+    down: (from: translateY(-100%), to: translateY(100%)),
+);
+
+@each $dir, $translate in $directions {
+    .slide-#{$dir} {
+        &-enter-from {
+            transform: map-get($translate, 'from') !important;
+            opacity: 0;
+        }
+
+        &-enter-to {
+            opacity: 1;
+        }
+
+        &-leave-to {
+            transform: map-get($translate, 'to') !important;
+            opacity: 0;
+        }
+
+        &-enter-active,
+        &-leave-active {
+            transition:
+                transform var(--transition-duration, .3s) ease-in-out,
+                opacity var(--transition-duration, .3s) ease-in-out !important;
+            transition-delay: var(--transition-delay) !important;
+        }
+
+        &-leave-active {
+            position: absolute !important;
+        }
+    }
+}
+
+.scale {
+    &-enter-from,
+    &-leave-to {
+        transform: scale(0) !important;
+    }
+
+    &-enter-active,
+    &-leave-active {
+        transform-origin: center;
+
+        transition:
+            transform var(--transition-duration, .3s) ease-in-out !important;
+        transition-delay: var(--transition-delay) !important;
+    }
+
+    &-leave-active {
+        position: absolute !important;
+    }
+}
