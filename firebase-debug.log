@@ -1,0 +1,450 @@
+[debug] [2023-08-19T19:14:14.511Z] ----------------------------------------------------------------------
+[debug] [2023-08-19T19:14:14.514Z] Command:       /usr/bin/node /home/ferroca/.local/bin/firebase emulators:start --export-on-exit --import=./firebase/exports
+[debug] [2023-08-19T19:14:14.515Z] CLI Version:   12.4.8
+[debug] [2023-08-19T19:14:14.515Z] Platform:      linux
+[debug] [2023-08-19T19:14:14.516Z] Node Version:  v16.18.0
+[debug] [2023-08-19T19:14:14.644Z] Time:          Sat Aug 19 2023 16:14:14 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2023-08-19T19:14:14.645Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-08-19T19:14:14.896Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-08-19T19:14:14.896Z] > authorizing via signed-in user (matheus.alexandre.ferraz@gmail.com)
+[debug] [2023-08-19T19:14:17.083Z] openjdk version "17.0.4" 2022-07-19
+
+[debug] [2023-08-19T19:14:17.084Z] OpenJDK Runtime Environment (build 17.0.4+8-Ubuntu-122.04)
+OpenJDK 64-Bit Server VM (build 17.0.4+8-Ubuntu-122.04, mixed mode, sharing)
+
+[debug] [2023-08-19T19:14:17.205Z] Parsed Java major version: 17
+[info] i  emulators: Starting emulators: auth, functions, firestore, hosting, storage {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, functions, firestore, hosting, storage"}}
+[debug] [2023-08-19T19:14:17.225Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-08-19T19:14:17.225Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-08-19T19:14:17.226Z] [firestore] Firestore Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-08-19T19:14:17.226Z] [firestore.websocket] websocket server for firestore only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-08-19T19:14:17.226Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-08-19T19:14:17.226Z] [storage] Storage Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-08-19T19:14:17.227Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"storage":[{"address":"127.0.0.1","family":"IPv4","port":9199}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2023-08-19T19:14:17.336Z] [hub] writing locator at /tmp/hub-quero-redacao.json
+[debug] [2023-08-19T19:14:17.354Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-08-19T19:14:17.354Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-08-19T19:14:17.355Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"storage":[{"address":"127.0.0.1","family":"IPv4","port":9199}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: database, pubsub {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mdatabase, pubsub\u001b[22m"}}
+[debug] [2023-08-19T19:14:17.378Z] defaultcredentials: writing to file /home/ferroca/.config/firebase/matheus_alexandre.ferraz_gmail.com_application_default_credentials.json
+[debug] [2023-08-19T19:14:17.402Z] Setting GAC to /home/ferroca/.config/firebase/matheus_alexandre.ferraz_gmail.com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /home/ferroca/.config/firebase/matheus_alexandre.ferraz_gmail.com_application_default_credentials.json"}}
+[debug] [2023-08-19T19:14:17.404Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/quero-redacao/adminSdkConfig [none]
+[debug] [2023-08-19T19:14:18.479Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/quero-redacao/adminSdkConfig 200
+[debug] [2023-08-19T19:14:18.479Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/quero-redacao/adminSdkConfig {"projectId":"quero-redacao","storageBucket":"quero-redacao.appspot.com","locationId":"us-central"}
+[debug] [2023-08-19T19:14:18.716Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-08-19T19:14:18.716Z] Ignoring unsupported arg: single_project_mode_error {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: single_project_mode_error"}}
+[debug] [2023-08-19T19:14:18.716Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","/home/ferroca/.cache/firebase/emulators/cloud-firestore-emulator-v1.18.1.jar","--host","127.0.0.1","--port",8080,"--websocket_port",9150,"--project_id","quero-redacao","--rules","/home/ferroca/Projects/quero-correcao/firestore.rules","--single_project_mode",true,"--functions_emulator","127.0.0.1:5001"],"optionalArgs":["port","webchannel_port","host","rules","websocket_port","functions_emulator","seed_from_export","project_id","single_project_mode"],"joinArgs":false} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"/home/ferroca/.cache/firebase/emulators/cloud-firestore-emulator-v1.18.1.jar\",\"--host\",\"127.0.0.1\",\"--port\",8080,\"--websocket_port\",9150,\"--project_id\",\"quero-redacao\",\"--rules\",\"/home/ferroca/Projects/quero-correcao/firestore.rules\",\"--single_project_mode\",true,\"--functions_emulator\",\"127.0.0.1:5001\"],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"websocket_port\",\"functions_emulator\",\"seed_from_export\",\"project_id\",\"single_project_mode\"],\"joinArgs\":false}"}}
+[info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
+[debug] [2023-08-19T19:14:22.836Z] Aug 19, 2023 4:14:22 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start
+INFO: Started WebSocket server on ws://127.0.0.1:9150
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Aug 19, 2023 4:14:22 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start\nINFO: Started WebSocket server on ws://127.0.0.1:9150\n"}}
+[debug] [2023-08-19T19:14:22.864Z] API endpoint: http://127.0.0.1:8080 {"metadata":{"emulator":{"name":"firestore"},"message":"API endpoint: http://127.0.0.1:8080"}}
+[debug] [2023-08-19T19:14:22.864Z] 
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=127.0.0.1:8080
+
+Dev App Server is now running.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"\nIf you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:\n\n   export FIRESTORE_EMULATOR_HOST=127.0.0.1:8080\n\nDev App Server is now running.\n\n"}}
+[info] ✔  firestore: Firestore Emulator UI websocket is running on 9150. {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator UI websocket is running on 9150."}}
+[debug] [2023-08-19T19:14:34.224Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"storage"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-08-19T19:14:37.381Z] Temp file directory for storage emulator: /tmp/firebase/storage/blobs {"metadata":{"emulator":{"name":"storage"},"message":"Temp file directory for storage emulator: /tmp/firebase/storage/blobs"}}
+[debug] [2023-08-19T19:14:37.429Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/quero-redacao/sites 
+[debug] [2023-08-19T19:14:38.747Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/quero-redacao/sites 200
+[debug] [2023-08-19T19:14:38.748Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/quero-redacao/sites {"sites":[{"name":"projects/quero-redacao/sites/quero-redacao","defaultUrl":"https://quero-redacao.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-08-19T19:14:38.748Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/quero-redacao/webApps/-/config [none]
+[debug] [2023-08-19T19:14:39.629Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/quero-redacao/webApps/-/config 200
+[debug] [2023-08-19T19:14:39.630Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/quero-redacao/webApps/-/config {"projectId":"quero-redacao","storageBucket":"quero-redacao.appspot.com","locationId":"us-central","apiKey":"AIzaSyC6F6VZ7Nk5MJxkrI1GMPnEfLFXhxLM8uU","authDomain":"quero-redacao.firebaseapp.com","messagingSenderId":"556762143417"}
+[debug] [2023-08-19T19:14:39.976Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/quero-redacao [none]
+[debug] [2023-08-19T19:14:40.589Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/quero-redacao 200
+[debug] [2023-08-19T19:14:40.590Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/quero-redacao {"projectId":"quero-redacao","projectNumber":"556762143417","displayName":"quero-redacao","name":"projects/quero-redacao","resources":{"hostingSite":"quero-redacao","storageBucket":"quero-redacao.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_88b5c456-1284-40da-9d0a-7b77e90d6a74"}
+[debug] [2023-08-19T19:14:40.593Z] Specified "public" directory "dist" does not exist; Deploy to Hosting site "quero-redacao" may fail or be empty.
+[info] i  hosting[quero-redacao]: Serving hosting files from: dist {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mdist\u001b[22m"}}
+[info] ✔  hosting[quero-redacao]: Local server: http://127.0.0.1:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5000\u001b[22m\u001b[24m"}}
+[info] i  ui: downloading ui-v1.11.7.zip... {"metadata":{"emulator":{"name":"ui"},"message":"downloading ui-v1.11.7.zip..."}}
+[debug] [2023-08-19T19:14:42.496Z] >>> [apiv2][query] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.11.7.zip 
+[debug] [2023-08-19T19:14:42.676Z] <<< [apiv2][status] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.11.7.zip 200
+[debug] [2023-08-19T19:14:42.676Z] <<< [apiv2][body] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.11.7.zip [stream]
+[debug] [2023-08-19T19:14:43.040Z] Data is 3064105
+[debug] [2023-08-19T19:14:43.040Z] [unzip] Entry: client/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2023-08-19T19:14:43.040Z] [unzip] Processing entry: client/
+[debug] [2023-08-19T19:14:43.041Z] [unzip] mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/
+[debug] [2023-08-19T19:14:43.072Z] [unzip] Entry: client/favicon.ico (compressed_size=2497 bytes, uncompressed_size=7406 bytes)
+[debug] [2023-08-19T19:14:43.072Z] [unzip] Processing entry: client/favicon.ico
+[debug] [2023-08-19T19:14:43.072Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client
+[debug] [2023-08-19T19:14:43.072Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/favicon.ico
+[debug] [2023-08-19T19:14:43.078Z] [unzip] Entry: client/apple-touch-icon.png (compressed_size=7231 bytes, uncompressed_size=7367 bytes)
+[debug] [2023-08-19T19:14:43.078Z] [unzip] Processing entry: client/apple-touch-icon.png
+[debug] [2023-08-19T19:14:43.078Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client
+[debug] [2023-08-19T19:14:43.079Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/apple-touch-icon.png
+[debug] [2023-08-19T19:14:43.080Z] [unzip] Entry: client/android-chrome-512x512.png (compressed_size=16987 bytes, uncompressed_size=18186 bytes)
+[debug] [2023-08-19T19:14:43.080Z] [unzip] Processing entry: client/android-chrome-512x512.png
+[debug] [2023-08-19T19:14:43.080Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client
+[debug] [2023-08-19T19:14:43.080Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/android-chrome-512x512.png
+[debug] [2023-08-19T19:14:43.083Z] [unzip] Entry: client/assets/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2023-08-19T19:14:43.083Z] [unzip] Processing entry: client/assets/
+[debug] [2023-08-19T19:14:43.084Z] [unzip] mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/
+[debug] [2023-08-19T19:14:43.084Z] [unzip] Entry: client/assets/extensions/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2023-08-19T19:14:43.084Z] [unzip] Processing entry: client/assets/extensions/
+[debug] [2023-08-19T19:14:43.084Z] [unzip] mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/extensions/
+[debug] [2023-08-19T19:14:43.084Z] [unzip] Entry: client/assets/extensions/default-extension.png (compressed_size=1646 bytes, uncompressed_size=1657 bytes)
+[debug] [2023-08-19T19:14:43.085Z] [unzip] Processing entry: client/assets/extensions/default-extension.png
+[debug] [2023-08-19T19:14:43.085Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/extensions
+[debug] [2023-08-19T19:14:43.085Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/extensions/default-extension.png
+[debug] [2023-08-19T19:14:43.087Z] [unzip] Entry: client/assets/index.58ca09f7.css (compressed_size=37601 bytes, uncompressed_size=321252 bytes)
+[debug] [2023-08-19T19:14:43.087Z] [unzip] Processing entry: client/assets/index.58ca09f7.css
+[debug] [2023-08-19T19:14:43.087Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets
+[debug] [2023-08-19T19:14:43.087Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/index.58ca09f7.css
+[debug] [2023-08-19T19:14:43.094Z] [unzip] Entry: client/assets/index.c2583d42.js (compressed_size=526232 bytes, uncompressed_size=1860152 bytes)
+[debug] [2023-08-19T19:14:43.094Z] [unzip] Processing entry: client/assets/index.c2583d42.js
+[debug] [2023-08-19T19:14:43.094Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets
+[debug] [2023-08-19T19:14:43.095Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/index.c2583d42.js
+[debug] [2023-08-19T19:14:43.121Z] [unzip] Entry: client/assets/provider-icons/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2023-08-19T19:14:43.121Z] [unzip] Processing entry: client/assets/provider-icons/
+[debug] [2023-08-19T19:14:43.122Z] [unzip] mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/
+[debug] [2023-08-19T19:14:43.122Z] [unzip] Entry: client/assets/provider-icons/auth_service_oidc.svg (compressed_size=414 bytes, uncompressed_size=858 bytes)
+[debug] [2023-08-19T19:14:43.122Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_oidc.svg
+[debug] [2023-08-19T19:14:43.122Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2023-08-19T19:14:43.122Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_oidc.svg
+[debug] [2023-08-19T19:14:43.123Z] [unzip] Entry: client/assets/provider-icons/auth_service_yahoo.svg (compressed_size=577 bytes, uncompressed_size=1182 bytes)
+[debug] [2023-08-19T19:14:43.123Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_yahoo.svg
+[debug] [2023-08-19T19:14:43.123Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2023-08-19T19:14:43.123Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_yahoo.svg
+[debug] [2023-08-19T19:14:43.124Z] [unzip] Entry: client/assets/provider-icons/auth_service_phone.svg (compressed_size=261 bytes, uncompressed_size=414 bytes)
+[debug] [2023-08-19T19:14:43.124Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_phone.svg
+[debug] [2023-08-19T19:14:43.125Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2023-08-19T19:14:43.125Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_phone.svg
+[debug] [2023-08-19T19:14:43.126Z] [unzip] Entry: client/assets/provider-icons/auth_service_saml.svg (compressed_size=575 bytes, uncompressed_size=1226 bytes)
+[debug] [2023-08-19T19:14:43.126Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_saml.svg
+[debug] [2023-08-19T19:14:43.126Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2023-08-19T19:14:43.126Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_saml.svg
+[debug] [2023-08-19T19:14:43.127Z] [unzip] Entry: client/assets/provider-icons/auth_service_mslive.svg (compressed_size=203 bytes, uncompressed_size=378 bytes)
+[debug] [2023-08-19T19:14:43.128Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_mslive.svg
+[debug] [2023-08-19T19:14:43.128Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2023-08-19T19:14:43.128Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_mslive.svg
+[debug] [2023-08-19T19:14:43.129Z] [unzip] Entry: client/assets/provider-icons/auth_service_facebook.svg (compressed_size=289 bytes, uncompressed_size=457 bytes)
+[debug] [2023-08-19T19:14:43.129Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_facebook.svg
+[debug] [2023-08-19T19:14:43.129Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2023-08-19T19:14:43.129Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_facebook.svg
+[debug] [2023-08-19T19:14:43.130Z] [unzip] Entry: client/assets/provider-icons/auth_service_play_games.svg (compressed_size=565 bytes, uncompressed_size=1173 bytes)
+[debug] [2023-08-19T19:14:43.130Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_play_games.svg
+[debug] [2023-08-19T19:14:43.131Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2023-08-19T19:14:43.131Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_play_games.svg
+[debug] [2023-08-19T19:14:43.132Z] [unzip] Entry: client/assets/provider-icons/auth_service_github.svg (compressed_size=466 bytes, uncompressed_size=838 bytes)
+[debug] [2023-08-19T19:14:43.132Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_github.svg
+[debug] [2023-08-19T19:14:43.132Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2023-08-19T19:14:43.132Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_github.svg
+[debug] [2023-08-19T19:14:43.133Z] [unzip] Entry: client/assets/provider-icons/auth_service_apple.svg (compressed_size=230 bytes, uncompressed_size=334 bytes)
+[debug] [2023-08-19T19:14:43.133Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_apple.svg
+[debug] [2023-08-19T19:14:43.133Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2023-08-19T19:14:43.133Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_apple.svg
+[debug] [2023-08-19T19:14:43.134Z] [unzip] Entry: client/assets/provider-icons/auth_service_google.svg (compressed_size=409 bytes, uncompressed_size=720 bytes)
+[debug] [2023-08-19T19:14:43.134Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_google.svg
+[debug] [2023-08-19T19:14:43.135Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2023-08-19T19:14:43.135Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_google.svg
+[debug] [2023-08-19T19:14:43.135Z] [unzip] Entry: client/assets/provider-icons/auth_service_email.svg (compressed_size=228 bytes, uncompressed_size=326 bytes)
+[debug] [2023-08-19T19:14:43.135Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_email.svg
+[debug] [2023-08-19T19:14:43.136Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2023-08-19T19:14:43.136Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_email.svg
+[debug] [2023-08-19T19:14:43.137Z] [unzip] Entry: client/assets/provider-icons/auth_service_twitter.svg (compressed_size=444 bytes, uncompressed_size=751 bytes)
+[debug] [2023-08-19T19:14:43.137Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_twitter.svg
+[debug] [2023-08-19T19:14:43.137Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2023-08-19T19:14:43.137Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_twitter.svg
+[debug] [2023-08-19T19:14:43.138Z] [unzip] Entry: client/assets/provider-icons/auth_service_game_center.svg (compressed_size=991 bytes, uncompressed_size=3921 bytes)
+[debug] [2023-08-19T19:14:43.138Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_game_center.svg
+[debug] [2023-08-19T19:14:43.138Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2023-08-19T19:14:43.138Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_game_center.svg
+[debug] [2023-08-19T19:14:43.139Z] [unzip] Entry: client/assets/index.c2583d42.js.map (compressed_size=1778557 bytes, uncompressed_size=7961927 bytes)
+[debug] [2023-08-19T19:14:43.139Z] [unzip] Processing entry: client/assets/index.c2583d42.js.map
+[debug] [2023-08-19T19:14:43.139Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets
+[debug] [2023-08-19T19:14:43.140Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/index.c2583d42.js.map
+[debug] [2023-08-19T19:14:43.200Z] [unzip] Entry: client/assets/img/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2023-08-19T19:14:43.200Z] [unzip] Processing entry: client/assets/img/
+[debug] [2023-08-19T19:14:43.200Z] [unzip] mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/img/
+[debug] [2023-08-19T19:14:43.200Z] [unzip] Entry: client/assets/img/database.png (compressed_size=29449 bytes, uncompressed_size=29988 bytes)
+[debug] [2023-08-19T19:14:43.201Z] [unzip] Processing entry: client/assets/img/database.png
+[debug] [2023-08-19T19:14:43.201Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/img
+[debug] [2023-08-19T19:14:43.201Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/assets/img/database.png
+[debug] [2023-08-19T19:14:43.202Z] [unzip] Entry: client/safari-pinned-tab.svg (compressed_size=838 bytes, uncompressed_size=1504 bytes)
+[debug] [2023-08-19T19:14:43.202Z] [unzip] Processing entry: client/safari-pinned-tab.svg
+[debug] [2023-08-19T19:14:43.202Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client
+[debug] [2023-08-19T19:14:43.202Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/safari-pinned-tab.svg
+[debug] [2023-08-19T19:14:43.203Z] [unzip] Entry: client/mstile-150x150.png (compressed_size=5406 bytes, uncompressed_size=5723 bytes)
+[debug] [2023-08-19T19:14:43.203Z] [unzip] Processing entry: client/mstile-150x150.png
+[debug] [2023-08-19T19:14:43.203Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client
+[debug] [2023-08-19T19:14:43.203Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/mstile-150x150.png
+[debug] [2023-08-19T19:14:43.204Z] [unzip] Entry: client/browserconfig.xml (compressed_size=491 bytes, uncompressed_size=822 bytes)
+[debug] [2023-08-19T19:14:43.204Z] [unzip] Processing entry: client/browserconfig.xml
+[debug] [2023-08-19T19:14:43.204Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client
+[debug] [2023-08-19T19:14:43.205Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/browserconfig.xml
+[debug] [2023-08-19T19:14:43.205Z] [unzip] Entry: client/robots.txt (compressed_size=26 bytes, uncompressed_size=26 bytes)
+[debug] [2023-08-19T19:14:43.206Z] [unzip] Processing entry: client/robots.txt
+[debug] [2023-08-19T19:14:43.206Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client
+[debug] [2023-08-19T19:14:43.206Z] [unzip] Writing file: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/robots.txt
+[debug] [2023-08-19T19:14:43.207Z] [unzip] Entry: client/index.html (compressed_size=1363 bytes, uncompressed_size=3064 bytes)
+[debug] [2023-08-19T19:14:43.207Z] [unzip] Processing entry: client/index.html
+[debug] [2023-08-19T19:14:43.207Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client
+[debug] [2023-08-19T19:14:43.207Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/index.html
+[debug] [2023-08-19T19:14:43.208Z] [unzip] Entry: client/favicon-16x16.png (compressed_size=757 bytes, uncompressed_size=777 bytes)
+[debug] [2023-08-19T19:14:43.208Z] [unzip] Processing entry: client/favicon-16x16.png
+[debug] [2023-08-19T19:14:43.208Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client
+[debug] [2023-08-19T19:14:43.208Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/favicon-16x16.png
+[debug] [2023-08-19T19:14:43.209Z] [unzip] Entry: client/manifest.json (compressed_size=246 bytes, uncompressed_size=551 bytes)
+[debug] [2023-08-19T19:14:43.209Z] [unzip] Processing entry: client/manifest.json
+[debug] [2023-08-19T19:14:43.209Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client
+[debug] [2023-08-19T19:14:43.209Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/manifest.json
+[debug] [2023-08-19T19:14:43.210Z] [unzip] Entry: client/favicon-32x32.png (compressed_size=1175 bytes, uncompressed_size=1175 bytes)
+[debug] [2023-08-19T19:14:43.210Z] [unzip] Processing entry: client/favicon-32x32.png
+[debug] [2023-08-19T19:14:43.210Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client
+[debug] [2023-08-19T19:14:43.210Z] [unzip] Writing file: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/favicon-32x32.png
+[debug] [2023-08-19T19:14:43.210Z] [unzip] Entry: client/android-chrome-192x192.png (compressed_size=7602 bytes, uncompressed_size=7834 bytes)
+[debug] [2023-08-19T19:14:43.211Z] [unzip] Processing entry: client/android-chrome-192x192.png
+[debug] [2023-08-19T19:14:43.211Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client
+[debug] [2023-08-19T19:14:43.211Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/client/android-chrome-192x192.png
+[debug] [2023-08-19T19:14:43.211Z] [unzip] Entry: server/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2023-08-19T19:14:43.212Z] [unzip] Processing entry: server/
+[debug] [2023-08-19T19:14:43.212Z] [unzip] mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/server/
+[debug] [2023-08-19T19:14:43.212Z] [unzip] Entry: server/server.js (compressed_size=343746 bytes, uncompressed_size=1346374 bytes)
+[debug] [2023-08-19T19:14:43.212Z] [unzip] Processing entry: server/server.js
+[debug] [2023-08-19T19:14:43.212Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/server
+[debug] [2023-08-19T19:14:43.212Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/server/server.js
+[debug] [2023-08-19T19:14:43.225Z] [unzip] Entry: server/server.js.map (compressed_size=289157 bytes, uncompressed_size=1325651 bytes)
+[debug] [2023-08-19T19:14:43.226Z] [unzip] Processing entry: server/server.js.map
+[debug] [2023-08-19T19:14:43.226Z] [unzip] else mkdir: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/server
+[debug] [2023-08-19T19:14:43.226Z] [unzip] deflating: /home/ferroca/.cache/firebase/emulators/ui-v1.11.7/server/server.js.map
+[info] i  ui: Removing outdated emulator files: ui-v1.11.1 {"metadata":{"emulator":{"name":"ui"},"message":"Removing outdated emulator files: ui-v1.11.1"}}
+[info] i  ui: Removing outdated emulator files: ui-v1.11.1.zip {"metadata":{"emulator":{"name":"ui"},"message":"Removing outdated emulator files: ui-v1.11.1.zip"}}
+[debug] [2023-08-19T19:14:43.974Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-08-19T19:14:43.974Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-08-19T19:14:43.974Z] Starting Emulator UI with command {"binary":"node","args":["/home/ferroca/.cache/firebase/emulators/ui-v1.11.7/server/server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/home/ferroca/.cache/firebase/emulators/ui-v1.11.7/server/server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2023-08-19T19:14:44.250Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2023-08-19T19:14:44.250Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "/home/ferroca/Projects/quero-correcao/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/home/ferroca/Projects/quero-correcao/functions\" for Cloud Functions..."}}
+[debug] [2023-08-19T19:14:44.260Z] Validating nodejs source
+[debug] [2023-08-19T19:14:47.195Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "dist/index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2023-08-19T19:14:47.196Z] Building nodejs source
+[debug] [2023-08-19T19:14:47.196Z] Failed to find version of module node: reached end of search path /home/ferroca/Projects/quero-correcao/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "16". Using node@16 from host. 
+[debug] [2023-08-19T19:14:47.202Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-08-19T19:14:47.207Z] Found firebase-functions binary at '/home/ferroca/Projects/quero-correcao/node_modules/.bin/firebase-functions'
+[info] Serving at port 8709
+
+[debug] [2023-08-19T19:14:48.699Z] Got response from /__/functions.yaml {"endpoints":{},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: . {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: ."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬────────────────┬─────────────────────────────────┐
+│ Emulator       │ Host:Port      │ View in Emulator UI             │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Authentication │ 127.0.0.1:9099 │ http://127.0.0.1:4000/auth      │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Functions      │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Firestore      │ 127.0.0.1:8080 │ http://127.0.0.1:4000/firestore │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Hosting        │ 127.0.0.1:5000 │ n/a                             │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Storage        │ 127.0.0.1:9199 │ http://127.0.0.1:4000/storage   │
+└────────────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500, 9150
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2023-08-19T19:15:21.701Z] File /home/ferroca/Projects/quero-correcao/functions/package.json changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/ferroca/Projects/quero-correcao/functions/package.json changed, reloading triggers"}}
+[debug] [2023-08-19T19:15:22.704Z] Validating nodejs source
+[debug] [2023-08-19T19:15:23.456Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "dist/index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2023-08-19T19:15:23.457Z] Building nodejs source
+[debug] [2023-08-19T19:15:23.457Z] Failed to find version of module node: reached end of search path /home/ferroca/Projects/quero-correcao/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "16". Using node@16 from host. 
+[debug] [2023-08-19T19:15:23.460Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-08-19T19:15:23.464Z] Found firebase-functions binary at '/home/ferroca/Projects/quero-correcao/node_modules/.bin/firebase-functions'
+[info] Serving at port 8106
+
+[debug] [2023-08-19T19:15:23.693Z] Got response from /__/functions.yaml {"endpoints":{},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: . {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: ."}}
+[debug] [2023-08-19T19:15:57.804Z] File /home/ferroca/Projects/quero-correcao/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/ferroca/Projects/quero-correcao/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2023-08-19T19:15:58.806Z] Validating nodejs source
+[debug] [2023-08-19T19:15:59.732Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "dist/index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2023-08-19T19:15:59.733Z] Building nodejs source
+[debug] [2023-08-19T19:15:59.733Z] Failed to find version of module node: reached end of search path /home/ferroca/Projects/quero-correcao/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "16". Using node@16 from host. 
+[debug] [2023-08-19T19:15:59.734Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-08-19T19:15:59.736Z] Found firebase-functions binary at '/home/ferroca/Projects/quero-correcao/node_modules/.bin/firebase-functions'
+[info] Serving at port 8852
+
+[debug] [2023-08-19T19:15:59.948Z] Got response from /__/functions.yaml {"endpoints":{},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: . {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: ."}}
+[debug] [2023-08-19T19:17:03.337Z] File /home/ferroca/Projects/quero-correcao/functions/dist/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/ferroca/Projects/quero-correcao/functions/dist/index.js changed, reloading triggers"}}
+[debug] [2023-08-19T19:17:04.339Z] Validating nodejs source
+[debug] [2023-08-19T19:17:05.178Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "dist/index.js",
+  "dependencies": {
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2023-08-19T19:17:05.179Z] Building nodejs source
+[debug] [2023-08-19T19:17:05.179Z] Failed to find version of module node: reached end of search path /home/ferroca/Projects/quero-correcao/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "16". Using node@16 from host. 
+[debug] [2023-08-19T19:17:05.180Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-08-19T19:17:05.183Z] Found firebase-functions binary at '/home/ferroca/Projects/quero-correcao/node_modules/.bin/firebase-functions'
+[info] Serving at port 8586
+
+[debug] [2023-08-19T19:17:05.718Z] Got response from /__/functions.yaml {"endpoints":{"helloWorld":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"helloWorld"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: helloWorld. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: helloWorld."}}
+[info] ✔  functions[us-central1-helloWorld]: http function initialized (http://127.0.0.1:5001/quero-redacao/us-central1/helloWorld). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/quero-redacao/us-central1/helloWorld)."}}
+[debug] [2023-08-19T19:17:15.087Z] Aug 19, 2023 4:17:15 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Aug 19, 2023 4:17:15 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\nINFO: Connected to new websocket client\n"}}
+[debug] [2023-08-19T19:17:20.429Z] Aug 19, 2023 4:17:20 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Aug 19, 2023 4:17:20 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2023-08-19T19:17:22.268Z] Aug 19, 2023 4:17:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Aug 19, 2023 4:17:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected HTTP/2 connection.\n"}}
+[debug] [2023-08-19T19:17:47.210Z] [work-queue] {"queuedWork":["/quero-redacao/us-central1/helloWorld-2023-08-19T19:17:47.210Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2023-08-19T19:17:47.210Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/quero-redacao/us-central1/helloWorld-2023-08-19T19:17:47.210Z"],"workRunningCount":1}
+[debug] [2023-08-19T19:17:47.211Z] Accepted request GET /quero-redacao/us-central1/helloWorld --> us-central1-helloWorld
+[debug] [2023-08-19T19:17:47.216Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2023-08-19T19:17:47.217Z] [functions] Got req.url=/quero-redacao/us-central1/helloWorld, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/quero-redacao/us-central1/helloWorld, mapping to path=/"}}
+[debug] [2023-08-19T19:17:47.232Z] [worker-pool] addWorker(us-central1-helloWorld) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-helloWorld)"}}
+[debug] [2023-08-19T19:17:47.233Z] [worker-pool] Adding worker with key us-central1-helloWorld, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-helloWorld, total=1"}}
+[debug] [2023-08-19T19:17:48.308Z] [runtime-status] [14665] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.10.1","resolution":"/home/ferroca/Projects/quero-correcao/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [14665] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.10.1\",\"resolution\":\"/home/ferroca/Projects/quero-correcao/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2023-08-19T19:17:48.310Z] [runtime-status] [14665] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.4.1","resolution":"/home/ferroca/Projects/quero-correcao/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [14665] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.4.1\",\"resolution\":\"/home/ferroca/Projects/quero-correcao/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-08-19T19:17:48.312Z] [runtime-status] [14665] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [14665] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2023-08-19T19:17:48.314Z] [runtime-status] [14665] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.4.1","resolution":"/home/ferroca/Projects/quero-correcao/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [14665] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.4.1\",\"resolution\":\"/home/ferroca/Projects/quero-correcao/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-08-19T19:17:48.528Z] [runtime-status] [14665] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [14665] Checked functions.config() {\"config\":{}}"}}
+[debug] [2023-08-19T19:17:48.528Z] [runtime-status] [14665] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"4.4.1","resolution":"/home/ferroca/Projects/quero-correcao/node_modules/firebase-functions/lib/v1/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [14665] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"4.4.1\",\"resolution\":\"/home/ferroca/Projects/quero-correcao/node_modules/firebase-functions/lib/v1/index.js\"}}"}}
+[debug] [2023-08-19T19:17:48.529Z] [runtime-status] [14665] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.4.1","resolution":"/home/ferroca/Projects/quero-correcao/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [14665] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.4.1\",\"resolution\":\"/home/ferroca/Projects/quero-correcao/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-08-19T19:17:48.530Z] [runtime-status] [14665] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.10.1","resolution":"/home/ferroca/Projects/quero-correcao/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [14665] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.10.1\",\"resolution\":\"/home/ferroca/Projects/quero-correcao/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2023-08-19T19:17:48.532Z] [runtime-status] [14665] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.4.1","resolution":"/home/ferroca/Projects/quero-correcao/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [14665] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.4.1\",\"resolution\":\"/home/ferroca/Projects/quero-correcao/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-08-19T19:17:48.532Z] [runtime-status] [14665] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"11.10.1","resolution":"/home/ferroca/Projects/quero-correcao/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [14665] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"11.10.1\",\"resolution\":\"/home/ferroca/Projects/quero-correcao/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2023-08-19T19:17:48.572Z] [runtime-status] [14665] Functions runtime initialized. {"cwd":"/home/ferroca/Projects/quero-correcao/functions","node_version":"16.18.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [14665] Functions runtime initialized. {\"cwd\":\"/home/ferroca/Projects/quero-correcao/functions\",\"node_version\":\"16.18.0\"}"}}
+[debug] [2023-08-19T19:17:48.572Z] [runtime-status] [14665] Listening to port: /tmp/fire_emu_47dfdd7272e301e3.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [14665] Listening to port: /tmp/fire_emu_47dfdd7272e301e3.sock"}}
+[debug] [2023-08-19T19:17:48.673Z] [worker-us-central1-helloWorld-8b5a9f37-259a-44cc-a6a3-565e4f15d385]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[worker-us-central1-helloWorld-8b5a9f37-259a-44cc-a6a3-565e4f15d385]: IDLE"}}
+[debug] [2023-08-19T19:17:48.674Z] [worker-pool] submitRequest(triggerId=us-central1-helloWorld) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-helloWorld)"}}
+[info] i  functions: Beginning execution of "us-central1-helloWorld" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"Beginning execution of \"us-central1-helloWorld\""}}
+[debug] [2023-08-19T19:17:48.677Z] [worker-us-central1-helloWorld-8b5a9f37-259a-44cc-a6a3-565e4f15d385]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[worker-us-central1-helloWorld-8b5a9f37-259a-44cc-a6a3-565e4f15d385]: BUSY"}}
+[info] >  {"structuredData":true,"severity":"INFO","message":"Hello logs!"} {"user":{"structuredData":true,"severity":"INFO","message":"Hello logs!"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"\u001b[90m> \u001b[39m {\"structuredData\":true,\"severity\":\"INFO\",\"message\":\"Hello logs!\"}"}}
+[debug] [2023-08-19T19:17:48.689Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-helloWorld" in 12.944238ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"Finished \"us-central1-helloWorld\" in 12.944238ms"}}
+[debug] [2023-08-19T19:17:48.690Z] [worker-us-central1-helloWorld-8b5a9f37-259a-44cc-a6a3-565e4f15d385]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[worker-us-central1-helloWorld-8b5a9f37-259a-44cc-a6a3-565e4f15d385]: IDLE"}}
+[debug] [2023-08-19T19:17:48.691Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2023-08-19T19:17:48.691Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2023-08-19T19:17:48.691Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2023-08-19T19:17:49.708Z] Functions emulator received unknown request at path /favicon.ico
+[debug] [2023-08-19T19:17:52.472Z] Aug 19, 2023 4:17:52 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
+INFO: Websocket client disconnected
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Aug 19, 2023 4:17:52 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed\nINFO: Websocket client disconnected\n"}}
