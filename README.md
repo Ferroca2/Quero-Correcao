@@ -1,5 +1,5 @@
 # Quero Correção - Democratizing Access to High-Quality Essay Feedback
-
+Apresentação no link: [Presentation_Quero_Correção](https://www.canva.com/design/DAFsEfXHSao/9Y2riiyswYXJEstHxzTB9A/edit?utm_content=DAFsEfXHSao&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ## Overview
 Quero Correção is an innovative solution that utilizes powerful AI models to guide students in training their essays for ENEM in a more efficient and economical way. Whether you're an independent student or studying in a group, you can learn how to write quality essays at a small cost while still having access to high-quality service.
