@@ -49,7 +49,6 @@ const azureRequest = async (url: string) => {
 
     await axios.post(`${endpoint}?${parameters}`, data, { headers })
     .then(response => {
-        console.log(response.data.readResult);
         content = response.data.readResult.content;
         const words = response.data.readResult.pages[0].words;
         content = filterContent(content, words);

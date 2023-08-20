@@ -20,11 +20,10 @@ export default async function getGrade(req: Request, res: Response) {
 
     const {userId, essayId, pictureUrl, topic} = req.body;
 
-    try{
-         await getEssayGrade(userId, essayId, pictureUrl, topic);
+    try {
+        const essayData = await getEssayGrade(userId, essayId, pictureUrl, topic);
 
-        return res.status(200).json({ message: 'Redação corrigida com sucesso' });
-
+        return res.status(200).json({ ...essayData });
     } catch(err) {
         console.log(err);
         return res.status(500).json({
