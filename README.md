@@ -6,10 +6,10 @@ Quero Correção is an innovative solution that utilizes powerful AI models to g
 
 
 ## Technologies Used
-* Typescript and VUE for the frontend -- FERROCA ATUALIZE
-* Node.js, x, y, z for the backend  --  PIA ATUALIZE
-* Microsoft Azure - as Vision AI
-* OpenAI API - as LLM AI
+* Typescript and VUE using Qusar framework for the frontend
+* Cloud  Functions written in typescript connecting with Firebase Auth, Firestore and Storage.
+* Microsoft Azure - as Computer Vision AI API
+* OpenAI API - as LLM model to process text information using  gpt-3.5-turbo AI
 
 
 ## Features
@@ -38,22 +38,26 @@ This is how the application works.
 
 ## Getting Started
 ## Requirements
-### Backend 
-1. x
-2. x
-3. x
-4. x
-### Excharge Backend 
-1. x
-2. x
-3. x
-4. x
-### SmartContracts
-1. x
-2. x
-3. x
-4. x
 
+### Frontend
+1. Have firebase cli installed (`run npm install -g  firebase-tool`)
+2. Run `npm run firebase`
+3. Run `npm run front:dev`
+4. Enjoy!
+
+### Backend 
+1. Have firebase cli installed (`run npm install -g  firebase-tool`)
+2. Run `npm run firebase`
+3. Make requests to http://localhost:5001/quero-redacao/us-central1/setEssay
+4. Use the body format  `{
+  "pictureUrl":"https://scontent.frao1-1.fna.fbcdn.net/v/t39.30808-6/367734184_2527963660702475_4959393267487895349_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=sjwqcAL8XrUAX8mdhKs&_nc_ht=scontent.frao1-1.fna&oh=00_AfB3jJXQD5x_jJpvvVQ9ykgobl23T7yfUGF9uyGSemwGWQ&oe=64E77122",
+  "topic": "Invisibilidade e registro civil: garantia de acesso à cidadania no Brasil",
+  "userId": "1",
+  "essayId": "1"
+
+}`
+
+It's recommended to run first your front-end,then  you don''t need to make resquests mannualy
 
 ## Usage
 ### User Interface
