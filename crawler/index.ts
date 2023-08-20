@@ -28,26 +28,22 @@ const getJsonFromUrl = async (url: string) => {
         $('div.text').each((i, div) => {
             generalComment = $(div).find('p').text().trim(); 
         });
-        jsonOutput.feedback_geral = generalComment;
 
-        // Extracting feedback items
-        $('div.text ul li').each((i, element) => {
-            if (i < 5) {
-                const listItemText = $(element).text().trim().slice(3);
-                jsonOutput[`feedback${i + 1}`] = listItemText;
+        for (let i = 0; i < 5; i++) {
+            const feedbackElement = $('div.text ul li').eq(i);
+            const feedbackText = feedbackElement.text().trim().slice(3);
+            if(feedbackText) {
+                jsonOutput[`feedback${i + 1}`] = feedbackText;
             }
-        });
+
+            const pointText = $('span.points').eq(i).text().trim();
+            if(pointText) {
+                jsonOutput[`nota${i + 1}`] = parseInt(pointText);
+            }
+        }
         if (jsonOutput.feedback5 === undefined) {
             return null;
         }
-
-        // Extracting points
-        $('span.points').each((i, element) => {
-            if (i < 5) { 
-                const pointText = $(element).text().trim();
-                jsonOutput[`nota${i + 1}`] = parseInt(pointText);
-            }
-        });
 
 
         return {topic: customTitleText, text: textComposition, json: jsonOutput};
