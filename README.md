@@ -33,7 +33,7 @@ This is how the application works.
 
 6. Below is a flowchart for visualizing this process. It's important to note that the end-user doesn't need to understand the underlying process; they only experience the cost-saving benefits of using our service!
 
-[CHART AQUI!!!!!!]
+![flowchart](https://github.com/Ferroca2/Quero-Correcao/assets/101767386/98a455a3-1d95-4696-a3b6-707a51452948)
 
 
 ## Getting Started
