@@ -23,12 +23,15 @@ const maximizedToggle = ref(true);
             class="bg-grey-8 text-white q-pa-md justify-between row align-center"
             horizontal
         >
-            <div class="column align-center justify-center text-subtitle1 text-weight-bold text-center">
+            <div class="column align-center justify-center text-subtitle2 text-weight-bold text-center">
                 {{ essay.theme }}
             </div>
-            <q-card-section horizontal>
+            <q-card-section
+                horizontal
+                class="q-ml-sm"
+            >
                 <div class="column align-center justify-center text-weight-bold text-subtitle1">
-                    {{ essay.grade }}
+                    {{ essay.sum }}
                 </div>
                 <q-btn
                     round
@@ -99,7 +102,7 @@ const maximizedToggle = ref(true);
                     Tema: {{ essay.theme }}
                 </div>
                 <div class="text-h6 text-green">
-                    Nota: {{ essay.grade }}
+                    Nota: {{ essay.sum }}
                 </div>
             </q-card-section>
 

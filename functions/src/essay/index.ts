@@ -1,9 +1,5 @@
 import { Request, Response } from 'firebase-functions';
 import { getEssayGrade } from './getEssayGrade';
-import * as admin from 'firebase-admin';
-
-const db = admin.firestore();
-
 
 export default async function getGrade(req: Request, res: Response) {
     if (req.method.toUpperCase() !== 'POST') {
