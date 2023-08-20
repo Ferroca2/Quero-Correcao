@@ -18,7 +18,7 @@ const callChat: any = async (content: string, topic: string) => {
                 { role: 'system', content: `Você é um corretor Enem.` },
                 { role: 'user', content: prompt },
             ],
-            temperature: 0.75,
+            temperature: 0.55,
             max_tokens: 1000,
         });
 
@@ -37,7 +37,6 @@ const callChat: any = async (content: string, topic: string) => {
             correction: json,
             sum: sum,
         };
-        console.log(chatObject);
         return chatObject;
     } catch (error) {
         console.log('An error occurred:', error);
@@ -52,7 +51,7 @@ export async function getEssayGrade (userId: string, essayId: string, pictureUrl
     const chatPromises = Array(10).fill(null).map(() => callChat(content, topic));
     let chatResults = await Promise.all(chatPromises);
 
-    let averages: any = { sum: 0, content: content, json: {} };
+    let averages: any = { sum: 0, content: content, correction: {} };
 
     for (let i = 1; i <= 5; i++) {
         const grades = chatResults.map(result => result.correction[`nota${i}`]);
@@ -73,16 +72,16 @@ export async function getEssayGrade (userId: string, essayId: string, pictureUrl
             sumCriteria += result.correction[`nota${i}`];
         }
         const averageCriteria = Math.round(( (sumCriteria + 1) / chatResults.length) / 40) * 40;
-        averages.json[`nota${i}`] = averageCriteria;
+        averages.correction[`nota${i}`] = averageCriteria;
 
         const feedbackResult = chatResults.find(result => result.correction[`nota${i}`] === averageCriteria);
         if (feedbackResult) {
-            averages.json[`feedback${i}`] = feedbackResult.correction[`feedback${i}`];
+            averages.correction[`feedback${i}`] = feedbackResult.correction[`feedback${i}`];
         }
 
         averages.sum += averageCriteria;
-        if(i === 1 && averages.json.nota1 !== 200) {
-            averages.json.nota1 = 40;
+        if(i === 1 && averages.correction.nota1 !== 200) {
+            averages.correction.nota1 = 40;
             averages.sum += 40;
         }
     }
@@ -104,7 +103,7 @@ export async function getEssayGrade (userId: string, essayId: string, pictureUrl
 
     // Add the "feedback_geral" to the json
     if (closestResult) {
-        averages.json["feedback_geral"] = closestResult.correction["feedback_geral"];
+        averages.correction["feedback_geral"] = closestResult.correction["feedback_geral"];
     }
 
     return averages
