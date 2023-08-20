@@ -7,7 +7,8 @@
     "firebase": "firebase emulators:start --export-on-exit --import='./firebase/exports'",
     "front:dev": "npm run dev -w front",
     "lint": "eslint --ext .js,.ts,.vue ./",
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No test specified\" && exit 0",
+    "seed": "npm run seed -w front"
   },
   "devDependencies": {
     "@quasar/app-vite": "^1.0.0",

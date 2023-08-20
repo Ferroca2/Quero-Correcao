@@ -5,15 +5,19 @@ import {
     matCamera,
     matPerson,
     matLogout,
+    matHelpOutline,
 } from '@quasar/extras/material-icons';
 
 import { ref } from 'vue';
+import { useSessionStore } from 'stores/session';
 
 const $q = useQuasar();
 
 const tab = ref('mails');
 
 $q.dark.set(true);
+
+const session = useSessionStore();
 
 </script>
 
@@ -30,7 +34,7 @@ $q.dark.set(true);
                     flat
                     round
                     dense
-                    icon="menu"
+                    :icon="matHelpOutline"
                     class="q-mr-sm"
                 />
 
@@ -43,6 +47,7 @@ $q.dark.set(true);
                     round
                     dense
                     :icon="matLogout"
+                    @click="session.logout"
                 />
             </q-toolbar>
         </q-header>
@@ -65,12 +70,12 @@ $q.dark.set(true);
                 <q-route-tab
                     name="alarms"
                     :icon="matCamera"
-                    to="/essay/correct"
+                    to="/essays/correct"
                 />
                 <q-route-tab
                     name="movies"
                     :icon="matPerson"
-                    to="/essay/profile"
+                    to="/essays/profile"
                 />
             </q-tabs>
         </q-footer>
