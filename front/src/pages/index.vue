@@ -104,7 +104,7 @@ async function login() {
 
     &__contents {
         gap: 2rem;
-        margin-top: 2rem;
+        margin-top: 5rem;
     }
 
     &__submit {
