@@ -49,13 +49,16 @@ This is how the application works.
 1. Have firebase cli installed (`run npm install -g  firebase-tool`)
 2. Run `npm run firebase`
 3. Make requests to http://localhost:5001/quero-redacao/us-central1/setEssay
-4. Use the body format  `{
-  "pictureUrl":"https://scontent.frao1-1.fna.fbcdn.net/v/t39.30808-6/367734184_2527963660702475_4959393267487895349_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=sjwqcAL8XrUAX8mdhKs&_nc_ht=scontent.frao1-1.fna&oh=00_AfB3jJXQD5x_jJpvvVQ9ykgobl23T7yfUGF9uyGSemwGWQ&oe=64E77122",
-  "topic": "Invisibilidade e registro civil: garantia de acesso à cidadania no Brasil",
-  "userId": "1",
-  "essayId": "1"
+4. Use the body format:
 
-}`
+ <pre>
+    {
+        "pictureUrl":"https://scontent.frao1-1.fna.fbcdn.net/v/t39.30808-6/367734184_2527963660702475_4959393267487895349_n.jpg_nc_cat=106&ccb=17&_nc_sid=730e14&_nc_ohc=sjwqcAL8XrUAX8mdhKs&_nc_ht=scontent.frao1-1.fna&oh=00_AfB3jJXQD5x_jJpvvVQ9ykgobl23T7yfUGF9uyGSemwGWQ&oe=64E77122",
+        "topic": "Invisibilidade e registro civil: garantia de acesso à cidadania no Brasil",
+        "userId": "1",
+        "essayId": "1"
+    }
+</pre>
 
 It's recommended to run first your front-end,then  you don''t need to make resquests mannualy
 
