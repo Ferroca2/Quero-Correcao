@@ -8,10 +8,9 @@ import * as admin from 'firebase-admin';
 
 const db = admin.firestore();
 
-export async function getEssayGrade (userId: string, pictureUrl: string, topic: string) {
+export async function getEssayGrade (userId: string, essayId: string, pictureUrl: string, topic: string) {
     const content = await azureRequest(pictureUrl);
-    // const userRef = await db.collection('users').doc(userId).get();
-    // const user = userRef.data() as User;
+    
     console.log(content);
 
     const prompt = buildPrompt(content, topic);
@@ -24,6 +23,10 @@ export async function getEssayGrade (userId: string, pictureUrl: string, topic: 
         ],
         temperature: 0.55,
         max_tokens: 1000,
+    });
+
+    const userRef = await db.collection('users').doc(userId).collection('essays').doc('').({
+        correction: JSON.parse(texts.data.choices[0]!.message!.content),
     });
     // const formatted = texts.data.choices[0]!.message!.content.replace(/[\r\n]/gm, '').trim().replace(/\\/gm, '');
     // fs.writeFileSync('texts.txt', JSON.stringify(texts.data), 'utf8');

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import fs from 'fs';
 import { load } from 'cheerio';
 
 const getJsonFromUrl = async (url: string) => {
@@ -36,6 +37,9 @@ const getJsonFromUrl = async (url: string) => {
                 jsonOutput[`feedback${i + 1}`] = listItemText;
             }
         });
+        if (jsonOutput.feedback5 === undefined) {
+            return null;
+        }
 
         // Extracting points
         $('span.points').each((i, element) => {
@@ -53,9 +57,76 @@ const getJsonFromUrl = async (url: string) => {
     });
 }
 
-const fetchAndLogData = async () => {
-    const result = await getJsonFromUrl('https://educacao.uol.com.br/bancoderedacoes/redacoes/qualificacoes-para-o-mercado-de-trabalho.htm');
-    console.log(result);
+const getLinksFromPage = async (pageUrl: string): Promise<string[]> => {
+    const response = await axios.get(pageUrl);
+    const $ = load(response.data);
+    const links: string[] = [];
+  
+    $('article.rt-body div.rt-line-option a').each((i, element) => {
+      const href = $(element).attr('href');
+      if (href) links.push(href);
+    });
+  
+    return links;
   };
+
+const processLinks = async (pageUrl: string) => {
+    const links = await getLinksFromPage(pageUrl);
+    const promises = links.map(link => getJsonFromUrl(link));
+    const results = await Promise.all(promises);
+    const filteredResults = results.filter(result => result !== null);
+    
+    return filteredResults; 
+};
+
+const getLinksFromLocalPage = (filePath: string): string[] => {
+    try {
+        // Read the HTML file content
+        const htmlContent = fs.readFileSync(filePath, 'utf8');
+    
+        // Load the HTML content into Cheerio
+        const $ = load(htmlContent);
+
+    
+        // Extract the links
+        const links: string[] = [];
+        $('div.thumbnails-wrapper a').each((i, element) => {
+            const href = $(element).attr('href');
+            if (href) links.push(href);
+        });
+    
+        return links;
+    } catch (error) {
+        console.error('An error occurred:', error);
+        return [];
+    }
+};
+
+type ResultType = { topic: string; text: string; json: any; } | { error: any; } | null;
+
+const processAllPagesInParallel = async (links: string[]): Promise<ResultType[]> => {
+  const promises = links.map(link => processLinks(link));
+  const resultsArrays: ResultType[][] = await Promise.all(promises);
+  
+  // Concatenate all the arrays into one
+  const concatenatedResults: ResultType[] = ([] as ResultType[]).concat(...resultsArrays);
+  return concatenatedResults;
+};  
+
+const fetchAndLogData = async () => {
+    const filePath = 'page.html'; // Update this path to your local file
+    const links = getLinksFromLocalPage(filePath);
+    
+    // Await the results
+    const resultsArray = await processAllPagesInParallel(links);
+    
+    // Wrap the resultsArray in a JSON object
+    const resultsObject = { results: resultsArray };
+    
+    // Save to result.json
+    fs.writeFileSync('output.json', JSON.stringify(resultsObject, null, 2), 'utf8');
+    console.log(`Results have been saved to output.json`);
+};
+
   
   fetchAndLogData();
