@@ -22,6 +22,9 @@ import useError from 'src/hooks/useError';
 import { useSessionStore } from 'stores/session';
 
 import { essaysApi } from 'boot/axios';
+import { Essay } from 'types/index';
+
+import SingleCriteriaCard from 'src/components/single-criteria-card.vue';
 
 const session = useSessionStore();
 
@@ -31,8 +34,13 @@ const theme = ref('');
 const essayImageFile = ref();
 const essayImageFileUrl = ref('');
 
+const essay = ref<Essay>();
+
 const loading = ref(false);
 
+const dialog = ref(false);
+
+const maximizedToggle = ref(true);
 
 const imgFilePickerChanged = () => {
     essayImageFileUrl.value = essayImageFile.value
@@ -85,9 +93,19 @@ async function createEssay () {
 
         await updateDoc(essayRef, { ...data });
 
+        essay.value = {
+            id: essayRef.id,
+            theme: theme.value,
+            imageUrl: imageUrl,
+            status: 'published',
+            createdAt: formattedDate,
+            ...data,
+        };
+
         theme.value = '';
         essayImageFile.value = null;
         essayImageFileUrl.value = '';
+        console.log(essay.value?.correction);
 
         $q.notify({
             type: 'positive',
@@ -96,6 +114,8 @@ async function createEssay () {
         });
 
         loading.value = false;
+
+        dialog.value = true;
     }
     catch (err) {
         error(err);
@@ -155,4 +175,101 @@ async function createEssay () {
             Corrigir Redação
         </q-btn>
     </q-page>
+    <q-dialog
+        v-model="dialog"
+        persistent
+        :maximized="maximizedToggle"
+        transition-show="slide-up"
+        transition-hide="slide-down"
+    >
+        <q-card class="bg-grey-9 text-white">
+            <q-bar>
+                <q-space />
+
+                <q-btn
+                    dense
+                    flat
+                    icon="minimize"
+                    :disable="!maximizedToggle"
+                    @click="maximizedToggle = false"
+                >
+                    <q-tooltip
+                        v-if="maximizedToggle"
+                        class="bg-white text-primary"
+                    >
+                        Minimize
+                    </q-tooltip>
+                </q-btn>
+                <q-btn
+                    dense
+                    flat
+                    icon="crop_square"
+                    :disable="maximizedToggle"
+                    @click="maximizedToggle = true"
+                >
+                    <q-tooltip
+                        v-if="!maximizedToggle"
+                        class="bg-white text-primary"
+                    >
+                        Maximize
+                    </q-tooltip>
+                </q-btn>
+                <q-btn
+                    v-close-popup
+                    dense
+                    flat
+                    icon="close"
+                >
+                    <q-tooltip class="bg-white text-primary">
+                        Close
+                    </q-tooltip>
+                </q-btn>
+            </q-bar>
+
+            <q-card-section
+                horizontal
+                class="bg-grey-8 align-center justify-between q-pa-md q-ma-md"
+            >
+                <div class="theme text-h6 text-accent">
+                    Tema: {{ essay!.theme }}
+                </div>
+                <div class="text-h6">
+                    Nota: {{ essay!.sum }}
+                </div>
+            </q-card-section>
+
+            <q-card-section
+                class="align-center justify-between q-pa-md"
+            >
+                <div class="theme text-h6 q-mb-md">
+                    Correção:
+                </div>
+                <single-criteria-card
+                    criteria="Critério 1"
+                    :grade="essay!.correction.nota1"
+                    :feedback="essay!.correction.feedback1"
+                />
+                <single-criteria-card
+                    criteria="Critério 2"
+                    :grade="essay!.correction.nota2"
+                    :feedback="essay!.correction.feedback2"
+                />
+                <single-criteria-card
+                    criteria="Critério 3"
+                    :grade="essay!.correction.nota3"
+                    :feedback="essay!.correction.feedback3"
+                />
+                <single-criteria-card
+                    criteria="Critério 4"
+                    :grade="essay!.correction.nota4"
+                    :feedback="essay!.correction.feedback4"
+                />
+                <single-criteria-card
+                    criteria="Critério 5"
+                    :grade="essay!.correction.nota5"
+                    :feedback="essay!.correction.feedback5"
+                />
+            </q-card-section>
+        </q-card>
+    </q-dialog>
 </template>

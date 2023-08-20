@@ -27,8 +27,6 @@ onMounted(async () => {
 
         themes.value = themesData as Theme[];
 
-        console.log(themes.value);
-
     } catch (err) {
         console.log(err);
     } finally {

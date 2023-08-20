@@ -10,9 +10,7 @@ import {
     updateProfile,
     User,
 } from 'firebase/auth';
-import { collection, addDoc, doc, getFirestore, setDoc } from 'firebase/firestore';
-
-import { text } from '../utils/text';
+import { doc, getFirestore, setDoc } from 'firebase/firestore';
 
 export interface LoginOptions {
     email: string;
@@ -58,24 +56,6 @@ export const useSessionStore = defineStore('session', () => {
             }, { merge: true });
 
             await user.getIdToken(true);
-
-            const themesRef = collection(getFirestore(), 'themes');
-
-            await addDoc(themesRef, {
-                numberOfStudent: 20,
-                avarageNote: 800,
-                text,
-                typeOfEssay: 'ENEM',
-                name: 'O Carnaval e a Diversidade Cultural',
-            });
-
-            await addDoc(themesRef, {
-                numberOfStudent: 12,
-                avarageNote: 900,
-                text,
-                typeOfEssay: 'ENEM',
-                name: 'A importância da posse de indentidade',
-            });
 
             await router.replace('/essays');
         },

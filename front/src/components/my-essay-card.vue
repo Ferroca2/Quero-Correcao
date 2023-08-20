@@ -2,6 +2,7 @@
 import { matChevronRight } from '@quasar/extras/material-icons';
 import { Essay } from 'src/types';
 import { ref } from 'vue';
+import SingleCriteriaCard from 'src/components/single-criteria-card.vue';
 
 defineProps<{
     essay: Essay;
@@ -96,27 +97,47 @@ const maximizedToggle = ref(true);
 
             <q-card-section
                 horizontal
-                class="bg-grey-8 align-center justify-between q-pa-md"
+                class="bg-grey-8 align-center justify-between q-pa-md q-ma-md"
             >
                 <div class="theme text-h6 text-accent">
                     Tema: {{ essay.theme }}
                 </div>
-                <div class="text-h6 text-green">
+                <div class="text-h6">
                     Nota: {{ essay.sum }}
                 </div>
             </q-card-section>
 
-            <q-card-section class="q-pt-none">
-                {{ essay.content }}
-            </q-card-section>
-
             <q-card-section
-                horizontal
                 class="align-center justify-between q-pa-md"
             >
-                <div class="theme text-h6 text-red">
-                    Correções: {{ essay.theme }}
+                <div class="theme text-h6 q-mb-md">
+                    Correção:
                 </div>
+                <single-criteria-card
+                    criteria="Critério 1"
+                    :grade="essay.correction.nota1"
+                    :feedback="essay.correction.feedback1"
+                />
+                <single-criteria-card
+                    criteria="Critério 2"
+                    :grade="essay.correction.nota2"
+                    :feedback="essay.correction.feedback2"
+                />
+                <single-criteria-card
+                    criteria="Critério 3"
+                    :grade="essay.correction.nota3"
+                    :feedback="essay.correction.feedback3"
+                />
+                <single-criteria-card
+                    criteria="Critério 4"
+                    :grade="essay.correction.nota4"
+                    :feedback="essay.correction.feedback4"
+                />
+                <single-criteria-card
+                    criteria="Critério 5"
+                    :grade="essay.correction.nota5"
+                    :feedback="essay.correction.feedback5"
+                />
             </q-card-section>
         </q-card>
     </q-dialog>

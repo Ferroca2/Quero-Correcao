@@ -11,7 +11,7 @@ const db = admin.firestore();
 const callChat: any = async (content: string, topic: string) => {
     try {
         const prompt = buildPrompt(content, topic);
-            
+
         const texts = await openai.createChatCompletion({
             model: 'gpt-3.5-turbo',
             messages: [
@@ -22,7 +22,7 @@ const callChat: any = async (content: string, topic: string) => {
             max_tokens: 1000,
         });
 
-        const json = JSON.parse(texts.data.choices[0]!.message!.content);
+        const json = JSON.parse(texts.data.choices[0]!.message!.content!);
 
         let sum = 0;
 
@@ -42,7 +42,7 @@ const callChat: any = async (content: string, topic: string) => {
         console.log('An error occurred:', error);
         return callChat(content, topic); // Recursive call if an error occurred
     }
-}
+};
 
 
 export async function getEssayGrade (userId: string, essayId: string, pictureUrl: string, topic: string) {
@@ -51,7 +51,7 @@ export async function getEssayGrade (userId: string, essayId: string, pictureUrl
     const chatPromises = Array(10).fill(null).map(() => callChat(content, topic));
     let chatResults = await Promise.all(chatPromises);
 
-    let averages: any = { sum: 0, content: content, correction: {} };
+    const averages: any = { sum: 0, content: content, correction: {} };
 
     for (let i = 1; i <= 5; i++) {
         const grades = chatResults.map(result => result.correction[`nota${i}`]);
@@ -97,10 +97,10 @@ export async function getEssayGrade (userId: string, essayId: string, pictureUrl
 
     // Add the "feedback_geral" to the json
     if (closestResult) {
-        averages.correction["feedback_geral"] = closestResult.correction["feedback_geral"];
+        averages.correction.feedback_geral = closestResult.correction.feedback_geral;
     }
 
-    return averages
+    return averages;
 
 
 }

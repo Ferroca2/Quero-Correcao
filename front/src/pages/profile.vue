@@ -30,8 +30,6 @@ onMounted(async () => {
 
         essays.value = essaysData;
 
-        console.log(essays.value);
-
     } catch (err) {
         console.log(err);
     } finally {
@@ -45,7 +43,10 @@ onMounted(async () => {
         <div class="text-h5 text-weight-bold text-center q-mb-md">
             Veja suas estatísticas e suas redações ja feitas
         </div>
-        <div v-if="loading">
+        <div
+            v-if="loading"
+            class="full-width row align-center justify-center"
+        >
             <q-spinner
                 size="2rem"
                 color="accent"
