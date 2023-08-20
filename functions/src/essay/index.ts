@@ -4,14 +4,6 @@ import * as admin from 'firebase-admin';
 
 const db = admin.firestore();
 
-interface GradeResponse {
-    response: string;
-    // typeOfDivision: string;
-    // trainings: {
-    //     day: string;
-    //     exercises: string[];
-    // }[];
-}
 
 export default async function getGrade(req: Request, res: Response) {
     if (req.method.toUpperCase() !== 'POST') {
@@ -26,16 +18,12 @@ export default async function getGrade(req: Request, res: Response) {
         });
     }
 
-    const {userId, pictureUrl, topic} = req.body;
+    const {userId, essayId, pictureUrl, topic} = req.body;
 
     try{
-        const grade: string = await getEssayGrade(userId, pictureUrl, topic);
+         await getEssayGrade(userId, essayId, pictureUrl, topic);
 
-        // const gradeRef = db.collection('grades').doc(userId);
-
-        // await gradeRef.set(grade, { merge: true });
-
-        return res.status(200).json({ message: 'Redação corrigida com sucesso', grade });
+        return res.status(200).json({ message: 'Redação corrigida com sucesso' });
 
     } catch(err) {
         console.log(err);

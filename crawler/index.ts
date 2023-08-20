@@ -1,6 +1,7 @@
 import axios from 'axios';
 import fs from 'fs';
 import { load } from 'cheerio';
+import buildPrompt from '../functions/src/utils/prompt';
 
 const getJsonFromUrl = async (url: string) => {
     return await axios.get(url).then(response => {
@@ -49,7 +50,8 @@ const getJsonFromUrl = async (url: string) => {
         return {topic: customTitleText, text: textComposition, json: jsonOutput};
     }).catch(error => {
         console.log('An error occurred:', error);
-        return {error: error};
+        return {topic: error, text: error, json: error};
+
     });
 }
 
@@ -98,7 +100,7 @@ const getLinksFromLocalPage = (filePath: string): string[] => {
     }
 };
 
-type ResultType = { topic: string; text: string; json: any; } | { error: any; } | null;
+type ResultType = { topic: string; text: string; json: any; } | null;
 
 const processAllPagesInParallel = async (links: string[]): Promise<ResultType[]> => {
   const promises = links.map(link => processLinks(link));
@@ -119,10 +121,31 @@ const fetchAndLogData = async () => {
     // Wrap the resultsArray in a JSON object
     const resultsObject = { results: resultsArray };
     
-    // Save to result.json
-    fs.writeFileSync('output.json', JSON.stringify(resultsObject, null, 2), 'utf8');
-    console.log(`Results have been saved to output.json`);
+    return resultsObject;
 };
 
+const writeObjectsToJSONL = (objects: object[], filePath: string) => {
+    const writeStream = fs.createWriteStream(filePath);
   
-  fetchAndLogData();
+    objects.forEach(object => {
+      const jsonString = JSON.stringify(object);
+      writeStream.write(jsonString + '\n');
+    });
+  
+    writeStream.end();
+  };
+
+const createPrompt = async () => {
+    let trainingData = [];
+    const result = await fetchAndLogData();
+    for(let i = 0; i < result.results.length; i++) {
+        const element = result.results[i];
+        const promp = buildPrompt(element!.text, element!.topic);
+        trainingData.push({prompt: promp, completion: JSON.stringify(element!.json)});
+    }
+
+    writeObjectsToJSONL(trainingData, 'trainingData.jsonl');
+}
+
+  
+createPrompt();

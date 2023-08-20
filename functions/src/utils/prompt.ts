@@ -18,14 +18,12 @@ const buildPrompt = (content: string, topic: string) => {
     Tema da redação:
     "${topic}"    
 
-    Com esses critérios, faça a correção da redação abaixo e 
-    apresente os resultados: 
+    Com esses critérios, faça a correção da redação abaixo e apresente os resultados: 
 
     "${content}"
 
-    Resposta esperada:
+    Resposta esperada deve ser feita em json:
     "
-\`\`\`json
 {
     "feedback1": [comentário sobre o texto em relação a esse critério, explicando a nota dada]
     "nota1": [nota do critério]
@@ -39,7 +37,7 @@ const buildPrompt = (content: string, topic: string) => {
     "nota5": [nota do critério]
     "feedback_geral": [comentário geral sobre o texto, sugerindo uma melhoria no texto como um todo]
 }
-\`\`\`
+"
     `;
     return prompt
 

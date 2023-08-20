@@ -25,13 +25,23 @@ export async function getEssayGrade (userId: string, essayId: string, pictureUrl
         max_tokens: 1000,
     });
 
-    const userRef = await db.collection('users').doc(userId).collection('essays').doc('').({
+    const json = JSON.parse(texts.data.choices[0]!.message!.content);
+
+    let sum = 0;
+
+    for(let i = 0; i < 5; i++) {
+        sum += json[`nota${i + 1}`];
+    }
+
+    await db.collection('users').doc(userId).collection('essays').doc(essayId).update({
+        content: content,
         correction: JSON.parse(texts.data.choices[0]!.message!.content),
-    });
+        sum: sum
+    }); 
     // const formatted = texts.data.choices[0]!.message!.content.replace(/[\r\n]/gm, '').trim().replace(/\\/gm, '');
     // fs.writeFileSync('texts.txt', JSON.stringify(texts.data), 'utf8');
     fs.writeFileSync('texts.json', JSON.stringify(JSON.parse(texts.data.choices[0]!.message!.content)), 'utf8');
 
 
-    return JSON.stringify(JSON.parse(texts.data.choices[0]!.message!.content));
+    
 }
