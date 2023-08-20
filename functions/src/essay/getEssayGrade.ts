@@ -27,7 +27,7 @@ export async function getEssayGrade (userId: string, pictureUrl: string, topic: 
     });
     // const formatted = texts.data.choices[0]!.message!.content.replace(/[\r\n]/gm, '').trim().replace(/\\/gm, '');
     // fs.writeFileSync('texts.txt', JSON.stringify(texts.data), 'utf8');
-    // fs.writeFileSync('texts.json', JSON.stringify(JSON.parse(texts.data.choices[0]!.message!.content)), 'utf8');
+    fs.writeFileSync('texts.json', JSON.stringify(JSON.parse(texts.data.choices[0]!.message!.content)), 'utf8');
 
 
     return JSON.stringify(JSON.parse(texts.data.choices[0]!.message!.content));

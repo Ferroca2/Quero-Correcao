@@ -1,0 +1,23 @@
+{
+    "name": "crawler",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "ts-node-dev --respawn index.ts"
+    },
+    "author": "hazelnut",
+    "license": "MIT",
+    "dependencies": {
+        "axios": "^1.4.0",
+        "cheerio": "^1.0.0-rc.12",
+        "dotenv": "^16.3.1",
+        "fs": "^0.0.1-security",
+        "puppeteer": "^21.1.0",
+        "typescript": "^5.1.6"
+    },
+    "devDependencies": {
+        "@types/node": "^20.4.2",
+        "ts-node-dev": "^2.0.0"
+    }
+}

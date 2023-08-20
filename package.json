@@ -1,30 +1,31 @@
 {
-  "name": "quero-correcao",
-  "version": "1.0.0",
-  "description": "A Quasar Project",
-  "private": true,
-  "scripts": {
-    "firebase": "firebase emulators:start --export-on-exit --import='./firebase/exports'",
-    "front:dev": "npm run dev -w front",
-    "lint": "eslint --ext .js,.ts,.vue ./",
-    "test": "echo \"No test specified\" && exit 0"
-  },
-  "devDependencies": {
-    "@quasar/app-vite": "^1.0.0",
-    "@types/node": "^12.20.21",
-    "@typescript-eslint/eslint-plugin": "^5.10.0",
-    "@typescript-eslint/parser": "^5.10.0",
-    "autoprefixer": "^10.4.2",
-    "eslint": "^8.10.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-vue": "^9.0.0",
-    "typescript": "^4.5.4"
-  },
-  "workspaces": [
-    "front",
-    "functions"
-  ],
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "name": "quero-correcao",
+    "version": "1.0.0",
+    "description": "A Quasar Project",
+    "private": true,
+    "scripts": {
+        "firebase": "firebase emulators:start --export-on-exit --import='./firebase/exports'",
+        "front:dev": "npm run dev -w front",
+        "lint": "eslint --ext .js,.ts,.vue ./",
+        "test": "echo \"No test specified\" && exit 0"
+    },
+    "devDependencies": {
+        "@quasar/app-vite": "^1.0.0",
+        "@types/node": "^12.20.21",
+        "@typescript-eslint/eslint-plugin": "^5.10.0",
+        "@typescript-eslint/parser": "^5.10.0",
+        "autoprefixer": "^10.4.2",
+        "eslint": "^8.10.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-vue": "^9.0.0",
+        "typescript": "^4.5.4"
+    },
+    "workspaces": [
+        "front",
+        "functions",
+        "crawler"
+    ],
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
 }
