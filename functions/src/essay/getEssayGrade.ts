@@ -18,7 +18,7 @@ const callChat: any = async (content: string, topic: string) => {
                 { role: 'system', content: `Você é um corretor Enem.` },
                 { role: 'user', content: prompt },
             ],
-            temperature: 0.55,
+            temperature: 0.523,
             max_tokens: 1000,
         });
 
@@ -62,8 +62,6 @@ export async function getEssayGrade (userId: string, essayId: string, pictureUrl
             const grade = result.correction[`nota${i}`];
             return grade >= mean - 1.5 * stdDev && grade <= mean + 1.5 * stdDev;
         });
-        
-        console.log(chatResults.length);
     }
 
     for (let i = 1; i <= 5; i++) {
@@ -80,10 +78,6 @@ export async function getEssayGrade (userId: string, essayId: string, pictureUrl
         }
 
         averages.sum += averageCriteria;
-        if(i === 1 && averages.correction.nota1 !== 200) {
-            averages.correction.nota1 = 40;
-            averages.sum += 40;
-        }
     }
 
     let closestResult: any = null;

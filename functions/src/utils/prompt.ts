@@ -22,7 +22,7 @@ const buildPrompt = (content: string, topic: string) => {
     5. Elaboração de proposta de intervenção para o problema abordado, respeitados os direitos humanos.
     O usuário deve escrever uma proposta de intervenção para a temática, ou seja, apontar uma iniciativa para enfrentar o problema proposto. Para a proposta de intervenção ser considerada completa, é preciso ter cinco elementos, sendo eles: agente, ação, meio, finalidade e detalhamento, além de estar de acordo com os direitos humanos.
     
-    A pontuação atribuída a cada competência pode variar até 200 pontos. 
+    A pontuação atribuída a cada competência pode variar até 200 pontos.
     A nota máxima da redação é de mil pontos. 
 
     Tema da redação:
@@ -48,6 +48,7 @@ const buildPrompt = (content: string, topic: string) => {
     "feedback_geral": [comentário geral sobre o texto, sugerindo uma melhoria no texto como um todo]
 }
 "
+Você é um corretor do ENEM que deve fazer a correção da prova de redação do ENEM considerando os critérios acima tendo em vista que uma boa redação tem nota final entre 750 e 1000, uma redação mediana tem nota final entre 500 e 750 e uma redação ruim tem nota final entre 0 e 500.
     `;
     return prompt
 
