@@ -28,6 +28,9 @@ async function signUp() {
     catch(err) {
         error(err);
     }
+    finally {
+        loading.value = false;
+    }
 }
 </script>
 
