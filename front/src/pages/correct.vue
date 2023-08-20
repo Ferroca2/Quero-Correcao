@@ -12,7 +12,6 @@ import {
     getFirestore,
     collection,
     addDoc,
-    doc,
     updateDoc,
 } from 'firebase/firestore';
 
@@ -21,6 +20,8 @@ import { useQuasar } from 'quasar';
 import useError from 'src/hooks/useError';
 
 import { useSessionStore } from 'stores/session';
+
+import { essaysApi } from 'boot/axios';
 
 const session = useSessionStore();
 
@@ -73,7 +74,20 @@ async function createEssay () {
 
         const imageUrl = await getDownloadURL(uploadImage.ref);
 
-        updateDoc(essayRef, { imageUrl, status: 'published'});
+        await updateDoc(essayRef, { imageUrl, status: 'published'});
+
+        const { data } = await essaysApi.post('', {
+            userId: session.user!.uid,
+            essayId: essayRef.id,
+            pictureUrl: imageUrl,
+            topic: theme.value,
+        });
+
+        await updateDoc(essayRef, { ...data });
+
+        theme.value = '';
+        essayImageFile.value = null;
+        essayImageFileUrl.value = '';
 
         $q.notify({
             type: 'positive',

@@ -1,9 +1,5 @@
 import { Request, Response } from 'firebase-functions';
 import { getEssayGrade } from './getEssayGrade';
-import * as admin from 'firebase-admin';
-
-const db = admin.firestore();
-
 
 export default async function getGrade(req: Request, res: Response) {
     if (req.method.toUpperCase() !== 'POST') {
@@ -21,9 +17,9 @@ export default async function getGrade(req: Request, res: Response) {
     const {userId, essayId, pictureUrl, topic} = req.body;
 
     try{
-         await getEssayGrade(userId, essayId, pictureUrl, topic);
+        const essayData = await getEssayGrade(userId, essayId, pictureUrl, topic);
 
-        return res.status(200).json({ message: 'Redação corrigida com sucesso' });
+        return res.status(200).json({...essayData});
 
     } catch(err) {
         console.log(err);

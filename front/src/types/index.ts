@@ -14,5 +14,5 @@ export interface Essay {
     status: string;
     createdAt: string;
     content: string;
-    grade: number;
+    sum: number;
 }
