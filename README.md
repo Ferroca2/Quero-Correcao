@@ -1,4 +1,4 @@
-# Quero Correção - Democratizing Instant Quality Essay Feedback
+# Quero Correção - Democratizing Access to High-Quality Essay Feedback
 
 
 ## Overview
