@@ -17,6 +17,7 @@ Quero Correção is an innovative solution that utilizes powerful AI models to g
 * Eliminate the need for human assistance, as the LLM is capable of providing valuable feedback in seconds
 * A mobile app to make uploading photos easy, with no PC required
 * Reliable results thanks to extensive prompt engineering and fine-tuning processes, ensuring precision according to ENEM standards
+* Web crawler to create a dataset of essays and corrections for future fine-tuning
 
 
 ## Flowchart
@@ -61,6 +62,9 @@ This is how the application works.
 </pre>
 
 It's recommended to run first your front-end,then  you don''t need to make resquests mannualy
+
+### Web Crawler
+1. Run `npm run dev`
 
 ## Usage
 ### User Interface
