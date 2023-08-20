@@ -1,9 +1,7 @@
 import axios from 'axios';
-import fs from 'fs';
 
 const filterContent = (content: string, words: any[]): string => {
     content = content.replace(/\n/g, 'ƕ'); // Replace '\n' with an unused character (emoji)
-    console.log(content);
     let filteredContent = '';
     let nextWordIndex = 0;
 
@@ -23,7 +21,6 @@ const filterContent = (content: string, words: any[]): string => {
 
                 if (boundingBoxValue > paragraphThreshold) {
                     filteredContent += '\n'; // Keep newline for paragraph
-                    console.log('here')
                 }
             }
             else if(prevChar !== '-') {
@@ -33,14 +30,14 @@ const filterContent = (content: string, words: any[]): string => {
             filteredContent += char;
         }
     }
-
     return filteredContent;
 }
 
 const azureRequest = async (url: string) => {
 
-    const subscriptionKey = process.env.AZURE_KEY;
-    const endpoint = process.env.AZURE_ENDPOINT;
+    let content: string = '';
+    const subscriptionKey = process.env.AZURE_KEY || '';
+    const endpoint = process.env.AZURE_ENDPOINT || '';
     const parameters = 'features=read&model-version=latest&language=pt&api-version=2023-02-01-preview';
     const headers = {
         'Ocp-Apim-Subscription-Key': subscriptionKey,
@@ -50,16 +47,19 @@ const azureRequest = async (url: string) => {
         url: url,
     };
 
-    axios.post(`${endpoint}?${parameters}`, data, { headers })
+    await axios.post(`${endpoint}?${parameters}`, data, { headers })
     .then(response => {
-        let content = response.data.readResult.content;
+        console.log(response.data.readResult);
+        content = response.data.readResult.content;
         const words = response.data.readResult.pages[0].words;
         content = filterContent(content, words);
-        return content;
     })
     .catch(error => {
         console.error(error);
         console.error(error.response);
+        content = 'ERROR';
     });
-
+    return content;
 }
+
+export default azureRequest;
